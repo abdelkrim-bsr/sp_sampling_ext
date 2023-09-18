@@ -13,8 +13,6 @@ eval = function(obs, pred){
     R2   = round((cor(pred, obs, method = 'spearman', use = 'pairwise.complete.obs')^2), digits = 3)
     SSE  = sum((pred - obs) ^ 2, na.rm = TRUE)
     SST  = sum((obs - mean(obs, na.rm = TRUE)) ^ 2, na.rm = TRUE)
-    SSE  = sum((pred - obs) ^ 2, na.rm = TRUE)
-    SST  = sum((obs - mean(obs, na.rm = TRUE)) ^ 2, na.rm = TRUE)
     MEC  = round((1 - SSE/SST), digits = 3)
   
   return(data.frame(ME = ME, RMSE = RMSE, R2 = R2, MEC = MEC))
