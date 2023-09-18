@@ -65,9 +65,7 @@ crs(exts)<- crs(rast("./data/ABG1.tif"))
 
 # Starting point of sampling designs ====
 
-metrics_df = data.frame(ME = NULL, RMSE = NULL, R2 = NULL,
-                        iter=NULL, ext=NULL,ext_nbr=NULL,
-                        sdgn=NULL, size=NULL)
+metrics_df = data.frame()
 
 cl <- makePSOCKcluster(70)
 registerDoParallel(cl)
